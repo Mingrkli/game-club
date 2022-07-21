@@ -1,0 +1,16 @@
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--c-pink);
+    border-radius: 5px;
+}   
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gold;
+}

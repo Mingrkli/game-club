@@ -1,0 +1,174 @@
+<!-- 
+    Creating a gamer club
+    Simplicity https://smtgen.neocities.org/ 
+
+    Plan to reset the login/signup input fields when clicking links to switch to other
+ -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Club</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/scroll-bar.css">
+        <link rel="stylesheet" href="css/screen-loader.css">
+        <script src="js/scripts.js" defer></script>
+        <script src="js/screen-loader.js" defer></script>
+    </head>
+
+    <body>
+        <div id="nav-bar" class="flex-base">
+            <button type="button" class="selected">Home</button>
+            <button type="button">Events</button>
+            <a class="sign-up">Join Us!</a>
+        </div>
+
+        <div id="home">
+            <header class="flex-base">
+
+                <div class="flex-base">
+                    <div class="flex-base title-words">
+                        <div>W</div>
+                        <div>e</div>
+                        <div>l</div>
+                        <div>c</div>
+                        <div>o</div>
+                        <div>m</div>
+                        <div>e</div>
+                    </div>
+
+                    <div id="gamers" class="flex-base title-words">
+                        <div>G</div>
+                        <div>a</div>
+                        <div>m</div>
+                        <div>e</div>
+                        <div>r</div>
+                        <div>s</div>
+                    </div>
+                </div>
+                
+                <p class="wrapper">Video Games? Fun? New Friends and Old? <a class="sign-up">>Join Our Club<</a> now to have all of them as well as free snack and drinks!</p>
+
+            </header>
+
+            <main class="flex-base">
+                <h1>Why Join Our Club?</h1>
+                <div class="wrapper">
+                    <div class="flex-list">
+                        <div>Over 100 Games!</div>
+                        <div>Win Rewards!</div>
+                        <div>Over 500 Members!</div>
+                    </div>
+                    <p>We also have arcades, tournaments, concerts, food, drinks, dance battles, and many more!</p>
+                </div>
+
+                <div id="why-join-imgs" class="wrapper flex-base">
+                    <div>
+                        <img src="img/slots.jpg" alt="">
+                        <p class="credits">Photo by <a href="https://unsplash.com/@carltraw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carl Raw</a> on <a href="https://unsplash.com/s/photos/arcade-machine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    </div>
+
+                    <div>
+                        <img src="img/arcades.jpg" alt="">
+                        <p class="credits">Photo by <a href="https://unsplash.com/@carltraw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carl Raw</a> on <a href="https://unsplash.com/s/photos/arcade-machine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <img src="img/ddr.jpg" alt="">
+                        <p class="credits">Photo by <a href="https://unsplash.com/@bakjerozevla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yara</a> on <a href="https://unsplash.com/s/photos/arcade-machine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    </div>
+
+                    <div>
+                        <img src="img/arcadesTwo.jpg" alt="">
+                        <p class="credits">Photo by <a href="https://unsplash.com/@jezar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jezael Melgoza</a> on <a href="https://unsplash.com/s/photos/arcade?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <!-- Login and Signup Form -->
+        <div id="signUp" class="hidden">
+            <!-- Login Form -->
+            <form id="login" class="form">
+                <!-- X for quit -->
+                <button type="button" class="form-exit">X</button>
+
+                <h1>Login</h1>
+
+                <!-- When Input is wrong show this -->
+                <div class="form-message form-message-error"></div>
+
+                <!-- Inputs -->
+                <div class="form-input-group">
+                    <input id="loginUsername" type="text" class="form-input" placeholder="Username or email" autofocus>
+                    <div class="form-input-error-message"></div>
+                </div>
+
+                <div class="form-input-group">
+                    <input id="loginPassword" type="password" class="form-input" placeholder="Password" autofocus>
+                    <div class="form-input-error-message"></div>
+                </div>
+
+                <!-- button -->
+                <button id="loginSubmit" class="form-button" type="submit">Continue</button>
+
+                <!-- Text Links -->
+                <p class="form-text">
+                    <a href="#" class="form-link">Forgot your password?</a>
+                </p>
+
+                <p class="form-text">
+                    <a id="createAccount" class="form-link">Don't have an account? Create Account</a>
+                </p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="createAcc" class="form hidden">
+                <!-- X for quit -->
+                <button type="button" class="form-exit">X</button>
+
+                <h1>Create Account</h1>
+
+                <!-- Inputs -->
+                <div class="form-input-group">
+                    <div class="form-input-error-message"></div>
+                    <input id="signUpUsername" type="text" class="form-input" placeholder="Username" autofocus>
+                </div>
+
+                <div class="form-input-group">
+                    <div class="form-input-error-message"></div>
+                    <input id="signUpEmail" type="text" class="form-input" placeholder="Email Address">
+                </div>
+
+                <div class="form-input-group">
+                    <div class="form-input-error-message"></div>
+                    <input id="signUpPassword" type="password" class="form-input" placeholder="Password">
+                </div>
+
+                <div class="form-input-group">
+                    <div class="form-input-error-message"></div>
+                    <input id="signUpPasswordConfirm" type="password" class="form-input" placeholder="Confirm Password" autofocus>
+                </div>
+
+                <!-- button -->
+                <!-- When Input is wrong show this -->
+                <div class="form-message form-message-error"></div>
+                <button id="signUpSubmit" class="form-button" type="submit">Continue</button>
+
+                <!-- Text Links -->
+                <p class="form-text">
+                    <a id="backToLogin" class="form-link">Already have an account? Sign in</a>
+                </p>
+            </form>
+
+        </div>
+
+        <div class="loading-wrapper">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+
+    </body>
+</html>

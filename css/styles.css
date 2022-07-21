@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* font: inherit; in case I want to do the font sizes myself */
+    box-sizing: border-box;
+}
+
+:root {
+    --main-c: rgb(10,10,10);
+    --sub-c: rgb(240,240,240);
+
+    --c-purple: rgba(106,0,244,1);
+    --c-purple-trans: rgba(106,0,244,.2);
+    --c-pink: rgba(242,0,137,1);
+    --c-pink-trans: rgba(242,0,137,.2);
+    --c-blue: rgba(3,4,94,1);
+    --c-blue-trans: rgba(3,4,94,.2);
+
+    --c-gradient: linear-gradient(140deg, var(--c-purple) 0%, var(--c-blue) 100%);
+    --c-gradient-trans: linear-gradient(140deg, var(--c-purple-trans) 0%, var(--c-pink-trans) 100%);
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+
+    color: var(--sub-c);
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+
+    text-rendering: optimizeSpeed;
+    line-height: 1.5; /* might change it later */
+}
+
+img, picture, svg {
+    max-width: 100%;
+    display: block;
+}
+
+.flex-base {
+    display: flex;
+}
+
+.flex-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.flex-list div {
+    font-size: 2rem;
+    color: gold;
+}
+
+.wrapper {
+    width: 1600px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Nav Bar 
+================================================================================================*/
+#nav-bar, header {
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-up, header div div {
+    text-transform: uppercase;
+}
+
+#nav-bar {
+    position: relative;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: var(--c-blue);
+}
+
+#nav-bar button, #nav-bar a {
+    padding: 1rem 1rem;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+
+    border: 2px solid black;
+    border-radius: 50px;
+    background: var(--c-gradient-trans);
+
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+#nav-bar button:hover {
+    color: var(--sub-c);
+    box-shadow: 0 0 10px 5px var(--c-purple);
+}
+
+#nav-bar button.selected {
+    color: var(--sub-c);
+
+    border: 2px solid var(--sub-c);
+    background: var(--c-gradient);
+}
+
+#nav-bar .sign-up {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--main-c);
+    border: 2px solid gold;
+    background-color: var(--c-pink);
+    box-shadow: 0 0 10px var(--c-pink);
+}
+
+#nav-bar .sign-up:hover {
+    color: var(--sub-c);
+    box-shadow: 0 0 20px 10px var(--c-pink);
+}
+
+/* Header 
+================================================================================================*/
+header {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 900px;
+
+    background: var(--c-gradient);
+}
+
+#gamers {
+    margin-left: 5rem;
+}
+
+.title-words div {
+    font-size: 8rem;
+
+    transition: 200ms ease-in-out;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.title-words div:hover {
+    color: var(--c-pink);
+    text-shadow: 0 0 10px var(--c-pink);
+
+    transform: scale(1.2);
+}
+
+.title-words div:active {
+    color: gold;
+    text-shadow: 0 0 10px gold;
+
+    transform: scale(1.5);
+}
+
+header > p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+header .sign-up {
+    color: var(--c-pink);
+    font-size: 2rem;
+    text-decoration: underline;
+
+    transition: 200ms ease-in-out;
+}
+
+header .sign-up:hover, .credits a:hover {
+    color: var(--sub-c);
+    text-shadow: 0 0 10px var(--c-pink);
+
+    cursor: pointer;
+}
+
+#nav-bar .sign-up:active, header .sign-up:active {
+    color: gold;
+}
+
+/* Main 
+================================================================================================*/
+main {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+
+    text-align: center;
+    background-color: rgb(0,0,0);
+    /* background: url(../img/arcades.jpg) no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+
+main h1, main div {
+    margin-bottom: 1rem;
+}
+
+main h1 {
+    font-size: 4rem;
+}
+
+/* Images */
+#why-join-imgs {
+    gap: 1rem;
+    overflow: hidden;
+}
+
+#why-join-imgs div {
+    position: relative;
+}
+
+#why-join-imgs div img {
+    width: 400px;
+    height: 500px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: 300ms ease-in-out;
+}
+
+#why-join-imgs div img:hover {
+    width: 1500px;
+    height: 500px;
+}
+
+.credits {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-size: .4rem;
+}
+
+.credits a {
+    color: var(--c-pink);
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-shadow: 0 0 5px var(--c-pink);
+}
+
+.credits a:active {
+    color: gold;
+}
+
+
+/* Sign up 
+================================================================================================*/
+#signUp {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.8);
+
+    z-index: 1;
+}
+
+#signUp.hidden {
+    display: none;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+
+    overflow: hidden;
+    z-index: 3;
+}
+
+.form.hidden {
+    display: none;
+}
+
+.form-exit {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    color: white;
+    background: var(--c-blue);
+    border: none;
+    border-radius: 10px;
+
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.form-exit:hover {
+    color: black;
+    background: var(--c-pink);
+    border-bottom: 2px solid gold;
+    box-shadow: 0 0 10px 0 var(--c-pink);
+}
+
+.form h1 {
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+}
+
+.form-message-error, .form-input-error-message {
+    font-size: .7rem;
+    color: red;
+
+    text-align: center;
+}
+
+.form-message-success {
+    font-size: .7rem;
+    color: green;
+
+    text-align: center;
+}
+
+.form-input-error-message {
+    position: absolute;
+    left: 10px;
+    top: -.8rem;
+}
+
+.form-input-group,  .form-input {
+    width: 100%;
+}
+
+.form-input-group {
+    position: relative;
+}
+
+.form-input, .form-button {
+    height: 50px;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    border-radius: 10px;
+}
+
+.form-input {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 1rem;
+    background-color: rgba(0,0,0,.1);
+    outline: none;
+    border: 1px solid black;
+}
+
+.form-input:focus {
+    border: 2px solid var(--c-pink);
+}
+
+.form-input-error {
+        color: red;
+        border-color: red;
+}
+
+.form-button {
+    font-family: 'Press Start 2P', cursive;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    background: var(--c-blue);
+
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.form-button:hover {
+    background: var(--c-pink);
+    border: 2px solid gold;
+    box-shadow: 0 0 10px 0 var(--c-pink);
+}
+
+.form-text {
+    margin-bottom: 1rem;
+}
+
+.form-text a {
+    font-size: .9rem;
+    color: blue;
+    text-decoration: underline;
+
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.form-text a:hover {
+    color: var(--c-pink);
+}
