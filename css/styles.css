@@ -351,6 +351,10 @@ main {
     position: relative;
 }
 
+.event-host-box.event-over {
+    filter: saturate(0);
+}
+
 .event-host-box:hover .event-box-text {
     opacity: 100%;
     box-shadow: 0 20px 20px -20px var(--c-pink);
@@ -416,12 +420,13 @@ main h1 {
     object-fit: cover;
     object-position: center;
 
+    filter: saturate(0);
     transition: 300ms ease-in-out;
 }
 
-#why-join-imgs div img:hover {
+#why-join-imgs div img.enlarge {
     width: 1500px;
-    height: 500px;
+    filter: saturate(1);
 }
 
 .credits {
@@ -476,6 +481,10 @@ main h1 {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         padding: 0 1rem;
+    }
+
+    .event-box-text {
+        opacity: 1;
     }
 }
 
