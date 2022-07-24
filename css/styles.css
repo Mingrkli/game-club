@@ -43,6 +43,7 @@ body {
 
     text-rendering: optimizeSpeed;
     line-height: 1.5; /* might change it later */
+    background-color: black;
 }
 
 img, picture, svg {
@@ -85,6 +86,13 @@ img, picture, svg {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+@media screen and (max-width: 1750px) {
+    .wrapper {
+        width: 100%;
+    }
+
 }
 
 /* Nav Bar 
@@ -148,6 +156,33 @@ img, picture, svg {
     box-shadow: 0 0 20px 10px var(--c-pink);
 }
 
+@media screen and (max-width: 720px) {
+    #nav-bar {
+        flex-direction: column;
+    }
+
+    #nav-bar .sign-up {
+        position: initial;
+        transform: translateY(0);
+    }
+}
+
+/* Page Sections
+================================================================================================*/
+.page-sections {
+    animation: pageFade 500ms forwards;
+}
+
+@keyframes pageFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Header 
 ================================================================================================*/
 header {
@@ -157,6 +192,12 @@ header {
     height: 900px;
 
     background: var(--c-gradient);
+}
+
+#event > header {
+    height: 300px;
+
+    background: black;
 }
 
 #gamers {
@@ -214,6 +255,76 @@ header .sign-up:hover, .credits a:hover {
     color: gold;
 }
 
+@media screen and (max-width: 1750px) {    
+    .title-words div {
+        font-size: 6rem;
+    }
+
+    header > p, header .sign-up {
+        font-size: 1rem;
+    }
+    
+    header > p {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 1340px) {    
+    header > div {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #event header > div {
+        flex-direction: row;
+    }
+
+    #event #gamers {
+        margin-left: 5rem;
+    }
+
+    #event .title-words div {
+        font-size: 4rem;
+    }
+
+    #gamers {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {    
+    #event .title-words div {
+        font-size: 3rem;
+    }
+
+    #event #gamers {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 680px) {    
+    .title-words div {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 620px) {    
+    #event header > div {
+        flex-direction: column;
+    }
+
+    #event #gamers {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {    
+    .title-words div {
+        font-size: 3rem;
+    }
+}
+
 /* Main 
 ================================================================================================*/
 main {
@@ -227,6 +338,57 @@ main {
     /* background: url(../img/arcades.jpg) no-repeat;
     background-size: cover;
     background-position: center; */
+}
+
+#event > main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 5rem;
+}
+
+.event-host-box {
+    position: relative;
+}
+
+.event-host-box:hover .event-box-text {
+    opacity: 100%;
+    box-shadow: 0 20px 20px -20px var(--c-pink);
+}
+
+.event-box-img img {
+    height: 400px;
+    background-size: cover;
+}
+
+.event-box-text {
+    position: relative;
+    opacity: 50%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0,0,0,.9);
+
+    transition: 200ms ease-in-out;
+}
+
+.event-box-text h3 {
+    margin: .5rem 0;
+
+    color: var(--c-pink)
+}
+
+.event-box-text p {
+    font-size: .6rem;
+}
+
+.date-of-event {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
 }
 
 main h1, main div {
@@ -283,6 +445,46 @@ main h1 {
     color: gold;
 }
 
+@media screen and (max-width: 1610px) {
+    .flex-list, #why-join-imgs {
+        flex-direction: column;
+    }
+
+    #why-join-imgs div img {
+        width: 100%;
+    }
+
+    #why-join-imgs div img:hover {
+        width: 100%;
+    }
+
+    .credits {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #event > main {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 970px) {    
+    #event > main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 620px) {    
+    #event > main {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
 
 /* Sign up 
 ================================================================================================*/
@@ -443,4 +645,28 @@ main h1 {
 
 .form-text a:hover {
     color: var(--c-pink);
+}
+
+@media screen and (max-width: 620px) {
+    .form-message-error, .form-input-error-message {
+        font-size: .5rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .form-message-error, .form-input-error-message {
+        font-size: .4rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .form-message-error, .form-input-error-message {
+        font-size: .3rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .form-message-error, .form-input-error-message {
+        display: none;
+    }
 }
